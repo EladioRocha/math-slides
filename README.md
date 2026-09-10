@@ -1,40 +1,33 @@
-# math-slides
+# Math Slides — Linear Equations
 
-Diapositivas sobre ecuaciones de primer grado realizadas con HTML, MathJax y remark.js.
+A small HTML presentation with **remark.js slides and MathJax notation**, showing worked solutions to two linear equations. The slide content is in Spanish; this guide is in English.
 
-## Estructura
+## Run locally
 
-- [index.html](index.html)
-
-## Preparación y uso
-
-Sirve la raíz con un servidor estático; por ejemplo, si tienes Python 3:
+From the repository root, use Python 3 to start a static server:
 
 ```sh
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Abre `http://127.0.0.1:8000/` y navega al ejemplo:
+Open `http://127.0.0.1:8000` in a browser. No npm installation or build step is required to view the checked-in example. Stop the server with `Ctrl+C`.
 
-- [index.html](index.html)
+## Content and editing
 
-Los recursos cargados desde servicios externos requieren conexión. La comprobación local debe incluir la consola del navegador y la carga de imágenes, scripts y estilos.
+The deck contains a title slide and worked examples for `5x + 4 = 1 - x` and `-3x + 5x/9 = 4/3 - 2x`. Their final values are `x = -1/2` and `x = -3`.
 
-## Validación y estado
+Edit the Markdown/HTML inside `<textarea id="source">` in [index.html](index.html). A `---` line separates slides. Math expressions use TeX delimiters, and [styles.css](styles.css) controls layout and emphasis.
 
-Esta guía se contrastó con el árbol de archivos y los manifiestos del repositorio. No se ha validado una ejecución completa contra servicios externos, bases de datos o hardware. Las versiones y los scripts mostrados describen el código actual; no implican que sus dependencias antiguas sigan siendo compatibles.
+The page loads remark.js, MathJax, and a legacy polyfill script from external hosts, so a local server alone does not make it work offline. Review external script dependencies before publishing a maintained version.
 
-## Documentación previa
+## Original previews
 
-Se conserva como referencia histórica, incluidas las imágenes y atribuciones originales. Los enlaces a demos y servicios no se han comprobado.
+The original screenshots are externally hosted historical references. Their availability is not guaranteed:
 
-# Diapositivas sobre ecuaciones de primer grado
+- [Title slide](https://pbs.twimg.com/media/EhnIGO7WkAEruOu?format=jpg&name=medium)
+- [First worked example](https://pbs.twimg.com/media/EhnIJi6X0AElU9y?format=jpg&name=medium)
+- [Second worked example](https://pbs.twimg.com/media/EhnIQFHWAAAxnQv?format=jpg&name=medium)
 
-En este repositorio estuve explorando las bibliotecas mathjax y remarkjs para crear diapositivas sobre ejercicios de matematicas resueltos.
+## Verification and known issues
 
-* [remarkjs](https://github.com/remarkjs/remark)
-* [MathJax](https://github.com/mathjax/MathJax)
-
-![Diapositiva 1](https://pbs.twimg.com/media/EhnIGO7WkAEruOu?format=jpg&name=medium)
-![Diapositiva 2 Ejercicio #1 resuelto](https://pbs.twimg.com/media/EhnIJi6X0AElU9y?format=jpg&name=medium)
-![Diapositiva 2 Ejercicio #2 resuelto](https://pbs.twimg.com/media/EhnIQFHWAAAxnQv?format=jpg&name=medium)
+There is no automated test suite. Check that the slide viewer loads, equations are typeset, and slide navigation works before presenting. The second example contains an intermediate line missing an `x` and explanatory text that does not match the displayed operations; review these steps before teaching from the deck. This documentation update does not change the mathematical slide source.
